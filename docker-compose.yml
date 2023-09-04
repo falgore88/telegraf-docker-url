@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  telegraf:
+    image: telegraf
+    command: ["telegraf", "--config", "/etc/telegraf/telegraf.conf"]
+    env_file: .env
+    extra_hosts:
+    - "host.docker.internal:host-gateway"
+    volumes: 
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf
