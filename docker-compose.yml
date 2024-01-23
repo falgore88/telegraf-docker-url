@@ -1,6 +1,7 @@
 version: "3.9"
 services:
   telegraf:
+    restart: always
     image: telegraf
     command: ["telegraf", "--config", "/etc/telegraf/telegraf.conf"]
     env_file: .env
